@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:8001",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}",
+            "userDataDir": "${workspaceRoot}/.vscode/chrome"
+        },
+        {
+            "name": "main-FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": ["--reload", "server.main:app"],
+            "cwd": "${workspaceFolder}/backend/",
+            "justMyCode": false,
+        },
+        {
+            "name": "models-FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": ["--reload", "model_server:server", "--port", "8002"],
+            "cwd": "${workspaceFolder}/backend/",
+            "justMyCode": false,
+        },
+        {
+            "name": "DetailCrawler",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "crawler.main",
+            "args": ["--mode", "item-detail"],
+            "cwd": "${workspaceFolder}/backend/"
+        },
+    ]
+}
