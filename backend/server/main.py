@@ -23,8 +23,8 @@ import sys
 sys.path.append(str(model_dir))
 
 
-from server.gen import GenData, GenInput
-from server.service import (
+from gen import GenData, GenInput
+from service import (
     CatePercent, EsSearchQuery, EvalDetails, SearchRequest,
     SearchedData, TimeSeriesStat, EvalScores, TimeSeriesStatPro,
     WordXY, CoOccurrence,
