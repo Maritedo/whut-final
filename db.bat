@@ -1,4 +1,4 @@
 net start mongodb
 chcp 65001
 D:
-D:\programs\elasticsearch-8.12.2\bin\elasticsearch.bat
+D:\elasticsearch-8.15.1-windows-x86_64\elasticsearch-8.15.1\bin\elasticsearch.bat
