@@ -15,13 +15,12 @@ from langchain_core.language_models.chat_models import HumanMessage
 import requests
 import pandas as pd
 from urllib.parse import quote
+from pathlib import Path
+import sys
 
 #TODO  增加工作路径
-from pathlib import Path
 model_dir = Path(__file__).parent.parent
-import sys
 sys.path.append(str(model_dir))
-
 
 from gen import GenData, GenInput
 from service import (
