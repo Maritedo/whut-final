@@ -21,17 +21,17 @@ e5_local = SentenceTransformer(
     str(model_dir / 'multilingual-e5-large-instruct'),
     device='cuda' if cuda.is_available() else 'cpu'
 )
-
+#TODO 转化字符串处理
 embedding_2023 = fasttext.load_model(
-    model_dir / 'fasttext-models' / '2023-model.bin'
+    str(model_dir / 'fasttext-models' / '2023-model.bin')
 )
 
 embedding_2022 = fasttext.load_model(
-    model_dir / 'fasttext-models' / '2022-model.bin'
+   str( model_dir / 'fasttext-models' / '2022-model.bin')
 )
 
 alignment_matrix: torch.nn.Parameter = torch.load(
-    model_dir / 'fasttext-models' / 'alignment_matrix.pt'
+   str( model_dir / 'fasttext-models' / 'alignment_matrix.pt')
 )
 
 server = FastAPI()

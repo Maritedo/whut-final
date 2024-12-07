@@ -5,9 +5,9 @@ CLIENT = MongoClient(
     host="localhost",
     port=27017,
 )
-
+#TODO 修改字典路径
 ACADEMY_STOP_WORDS: list[str]
-with open("./database/ac_stop_words.dict", "r", encoding="utf-8") as f:
+with open("../database/ac_stop_words.dict", "r", encoding="utf-8") as f:
     ACADEMY_STOP_WORDS = f.read().split("\n")
 
 class ItemListMongo:

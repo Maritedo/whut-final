@@ -10,8 +10,14 @@ from fastapi import UploadFile
 from pydantic import BaseModel
 import requests
 
-from ..database.database_meta import DatabaseMeta, DatabaseMetaData
-from ..database import ACADEMY_STOP_WORDS
+#TODO  增加工作路径
+from pathlib import Path
+model_dir = Path(__file__).parent.parent
+import sys
+sys.path.append(str(model_dir))
+
+from database.database_meta import DatabaseMeta, DatabaseMetaData
+from database import ACADEMY_STOP_WORDS
 
 
 def transform_files_into_data_frame(

@@ -16,16 +16,24 @@ import requests
 import pandas as pd
 from urllib.parse import quote
 
-from ..server.gen import GenData, GenInput
-from ..server.service import (
+#TODO  增加工作路径
+from pathlib import Path
+model_dir = Path(__file__).parent.parent
+import sys
+sys.path.append(str(model_dir))
+
+
+from server.gen import GenData, GenInput
+from server.service import (
     CatePercent, EsSearchQuery, EvalDetails, SearchRequest,
     SearchedData, TimeSeriesStat, EvalScores, TimeSeriesStatPro,
     WordXY, CoOccurrence,
     import_data_into_es_from_frame,
     transform_files_into_data_frame,
 )
-from ..database.user import UserData, User, UserLoginInput
-from ..database.database_meta import (
+
+from database.user import UserData, User, UserLoginInput
+from database.database_meta import (
     DatabaseMetaData, DatabaseMetaDetail,
     DatabaseMetaInput, DatabaseMetaOutput,
 )
